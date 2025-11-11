@@ -1,7 +1,7 @@
 # 📋 Guía Práctica: Medición de WEe y AEe – Offsets Electrónicos
 
 ## 🎯 Objetivo
-Medir los voltajes de offset electrónico (WEe y AEe) de una placa AFE o ISB de Alphasense **sin sensor conectado**, utilizando un multímetro común.
+Medir los voltajes de offset electrónico (WEe y AEe) de una placa AFE o ISB de Alphasense **sin sensor conectado**, utilizando un multímetro común. Estas placas electrónicas se emplean junto a sensores Alphasense para convertir corriente en voltaje antes de digitalizar la señal.
 
 ---
 
@@ -19,7 +19,7 @@ Medir los voltajes de offset electrónico (WEe y AEe) de una placa AFE o ISB de 
 | **Multímetro digital** | Rango VDC: 0–2 V o 0–20 V; resolución ≤1 mV; precisión ±0,5 % | Mínimo 3,5 dígitos |
 | **Fuente de alimentación** | 3,3 V o 5 V DC | Según la placa |
 | **Cables de prueba** | Puntas cocodrilo o pinzas | Para conexión segura |
-| **Placa AFE/ISB** | Alphasense o compatible | Sin sensor conectado |
+| **Placa AFE/ISB** | Alphasense o compatible | Sin sensor conectado; convierte corriente a voltaje |
 
 ---
 
