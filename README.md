@@ -38,6 +38,17 @@ La estación integra sensores **electroquímicos**, **ópticos** y **meteorológ
 - `documentacion/`, `datos/`, `herramientas/`, `configuracion/`: repositorios para datasheets, datasets EPA/WMO, utilidades y perfiles de configuración.
 - `gestion-proyecto/planificacion/roles-responsabilidades.md`: lista actualizada de cargos, incluyendo QA/QC y administración de datos.
 
+## Índice de informes y manuales
+| Recurso | Ubicación | Descripción |
+| --- | --- | --- |
+| Manual ISB/AFE y notas de aplicación Alphasense | `documentacion/datasheets-sensores/sensores-gases/electroquimicos/alphasense/` | PDFs AAN-803-05, manual ISB y guía rápida de placas que convierten corriente a voltaje para sensores B4/B43F. |
+| Tutorial offsets WEe/AEe | `documentacion/manuales-tecnicos/calibracion/tutorial-offsets-wee-aee.md` | Procedimiento paso a paso para medir offsets electrónicos en placas ISB/AFE con multímetro. |
+| Nota técnica AAN-803-05 | `documentacion/manuales-tecnicos/calibracion/AAN-803-05.pdf` | Referencia oficial del fabricante para calibraciones electroquímicas. |
+| Brochure y ficha de operación en terreno | `documentacion/manuales-tecnicos/operacion/brochure.pdf` y `documentacion/manuales-tecnicos/operacion/Ficha Terreno AIRE.pdf` | Ficha de despliegue en terreno y brochure visual del proyecto. |
+| Reporte laboratorio – voltaje circuito abierto ISB | `documentacion/informes-pruebas/laboratorio/condiciones-controladas/Volt_Circuito_abierto_ISB_alphasense_est05/Voltage_circuito_abierto_alphasense_estacion_5.pdf` | Informe LaTeX con fotos e instrumental para medición de voltaje en placas ISB. Incluye fuentes `.tex` e imágenes en `img/`. |
+| Reporte campo – co-ubicación SINCA | `documentacion/informes-pruebas/campo/co-ubicacion-sinca/calibracion-sinca-1.pdf` | Evidencia PDF de campaña de co-ubicación para calibraciones con red SINCA. |
+
+
 ## Cómo colaborar (incluye uso con Codex)
 1. Clona este repositorio y revisa el README antes de abrir Codex.
 2. Abre una sesión de Codex desde la raíz (`codex run`), y revisa los archivos en `gestion-proyecto/planificacion/` para conocer roles y tareas pendientes.
