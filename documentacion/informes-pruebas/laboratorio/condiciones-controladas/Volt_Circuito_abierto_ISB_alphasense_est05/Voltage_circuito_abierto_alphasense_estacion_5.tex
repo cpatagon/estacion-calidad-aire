@@ -21,6 +21,7 @@
 \usepackage{multicol}
 \usepackage{siunitx}
 \usepackage{xcolor}
+\usepackage[siunitx]{circuitikz}
 
 \usepackage{subcaption}
 \usepackage{caption}
@@ -156,11 +157,13 @@
 	\caption{Equipamiento utilizado en el ensayo: fuente de bajo ruido, multímetro y osciloscopio.}
 	\label{fig:equipamiento}
 \end{figure}
+
+
 	
 	\subsection*{Procedimiento medición aplicado a cada placa ISB}
 	\begin{itemize}
-		\item Se extrae el sensor del socket de la placa Alphasense ISB.% aclarar que esto no es recomendable en operación normal
-		\item Se conectan los cables según diagrama de la figura \ref{fig:conexiones}.%agregar figura de conexiones y agregar esquematicos
+		\item Se extrae el sensor del socket de la placa Alphasense ISB. Esto podria no ser recomendable ya que se podría perder la calibración de fabrica.
+		\item Se conectan los cables según diagrama de la figura \ref{fig:conexiones} y \ref{fig:conexiones2}.%agregar figura de conexiones y agregar esquematicos
 		\item Se conecta el terminal GND de la placa ISB al terminal negativo de la fuente de bajo ruido.
 		\item Se conectan las tierras de los canales 1 y 2 del osciloscopio al GND de la placa.
 		\item Se conectan OP1+ y OP2+ a las puntas de prueba de los canales 1 y 2 del osciloscopio, respectivamente.
@@ -179,6 +182,89 @@
 	\caption{Conexiones de la prueba de Offset}
 	\label{fig:conexiones}
 \end{figure}
+
+%-------------------------------
+\begin{figure}[h!]
+	\centering
+	\begin{circuitikz}[scale=1.1]
+		% ============================
+		% BUS DE TIERRA (GND) COMÚN
+		% ============================
+		\draw (-1,-0.5) node[ground]{} to[short] (7.3,-0.5);
+		\node[below] at (5,-0.5) {GND común};
+		
+		% ============================
+		% FUENTE DC A LA IZQUIERDA
+		% ============================
+		% Batería entre GND y V+
+		\draw (-1,-0.5) to[battery1,l=$V_\text{fuente}$] (-1,2);
+		% V+ hacia la derecha
+		\draw (-1,2) -- (1.5,2);
+		\node[above] at (0.2,2) {V+};
+		\node[below] at (0.2,-0.5) {GND fuente};
+		
+		% ============================
+		% ISB AL CENTRO
+		% ============================
+		% Caja ISB más grande
+		\draw (2.5,0) rectangle (6,3.5);
+		\node at (4.25,3.7) {\textbf{ISB (Molex)}};
+		
+		% Pin V+ ISB
+		\draw (2.5,3) -- (1.5,3);
+		\node[left] at (4.1,3) {V+ IN};
+		% Conexión V+ fuente → V+ ISB
+		\draw (1.5,2) -- (1.5,3);
+		
+		% Pin GND ISB
+		\draw (2.5,0.8) -- (1.8,0.8);
+		\node[left] at (4.3,0.8) {GND ISB};
+		\draw (1.8,0.8) -- (1.8,-0.5);
+		
+		% Pines de salida con mejor espaciado
+		\draw (6,3.2) -- (7.2,3.2);
+		\node[right] at (4.8,3.2) {OP1+};
+		\draw (6,1.8) -- (7,1.8);
+		\node[right] at (4.8,1.8) {OP2+};
+		
+		% ============================
+		% OSCILOSCOPIO A LA DERECHA
+		% ============================
+		% Caja osciloscopio
+		\draw (8,1.) rectangle (10,4.);
+		\node at (9.2,4.2) {\textbf{Osciloscopio}};
+		
+		% Terminales del osciloscopio
+		% Canal 1 (+)
+		\draw (8,3.7) -- (7.3,3.7);
+		\node[left] at (9.5,3.7) {Ch1 (+)};
+		% Canal 1 (–)
+		\draw (8,3.0) -- (7.3,3.0);
+		\node[left] at (9.5,3.0) {Ch2 (+)};
+		% GND del osciloscopio
+		\draw (8,1.5) -- (7.3,1.5);
+		\node[left] at (9.7,1.5) {GND osc.};
+		
+		% ============================
+		% CONEXIONES SEÑALES → OSCILO (SIN CRUCES)
+		% ============================
+		% OP1+ → Ch1 (+) - línea directa con segmentos limpios
+		\draw (7.2,3.2) -- (7.25,3.2) -- (7.25,3.7) -- (7.3,3.7);
+		
+		% OP2+ → Ch1 (–) - línea con curva para evitar cruces
+		\draw  (7,1.8) -- (7.3,1.8) -- (7.3,3.0);
+		
+		% GND común → GND osciloscopio
+		\draw (7.3,1.5) -- (7.3,-0.5);
+		
+	\end{circuitikz}
+	\caption{Esquema de conexiones electrónicas para la medición de offset en la ISB.}
+	\label{fig:conexiones2}
+\end{figure}
+
+
+
+
 	
 	%-------------------------------------------------------
 	\newpage
