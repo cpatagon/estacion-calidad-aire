@@ -41,12 +41,24 @@ La estación integra sensores **electroquímicos**, **ópticos** y **meteorológ
 ## Índice de informes y manuales
 | Recurso | Ubicación | Descripción |
 | --- | --- | --- |
-| Manual ISB/AFE y notas de aplicación Alphasense | `documentacion/datasheets-sensores/sensores-gases/electroquimicos/alphasense/` | PDFs AAN-803-05, manual ISB y guía rápida de placas que convierten corriente a voltaje para sensores B4/B43F. |
-| Tutorial offsets WEe/AEe | `documentacion/manuales-tecnicos/calibracion/tutorial-offsets-wee-aee.md` | Procedimiento paso a paso para medir offsets electrónicos en placas ISB/AFE con multímetro. |
-| Nota técnica AAN-803-05 | `documentacion/manuales-tecnicos/calibracion/AAN-803-05.pdf` | Referencia oficial del fabricante para calibraciones electroquímicas. |
-| Brochure y ficha de operación en terreno | `documentacion/manuales-tecnicos/operacion/brochure.pdf` y `documentacion/manuales-tecnicos/operacion/Ficha Terreno AIRE.pdf` | Ficha de despliegue en terreno y brochure visual del proyecto. |
-| Reporte laboratorio – voltaje circuito abierto ISB | `documentacion/informes-pruebas/laboratorio/condiciones-controladas/Volt_Circuito_abierto_ISB_alphasense_est05/Voltage_circuito_abierto_alphasense_estacion_5.pdf` | Informe LaTeX con fotos e instrumental para medición de voltaje en placas ISB. Incluye fuentes `.tex` e imágenes en `img/`. |
-| Reporte campo – co-ubicación SINCA | `documentacion/informes-pruebas/campo/co-ubicacion-sinca/calibracion-sinca-1.pdf` | Evidencia PDF de campaña de co-ubicación para calibraciones con red SINCA. |
+| Manual ISB/AFE y notas de aplicación Alphasense | [`documentacion/datasheets-sensores/sensores-gases/electroquimicos/alphasense/`](documentacion/datasheets-sensores/sensores-gases/electroquimicos/alphasense/) | PDFs AAN-803-05, manual ISB y guía rápida de placas que convierten corriente a voltaje para sensores B4/B43F. |
+| Tutorial offsets WEe/AEe | [`documentacion/manuales-tecnicos/calibracion/tutorial-offsets-wee-aee.md`](documentacion/manuales-tecnicos/calibracion/tutorial-offsets-wee-aee.md) | Procedimiento paso a paso para medir offsets electrónicos en placas ISB/AFE con multímetro. |
+| Nota técnica AAN-803-05 | [`documentacion/manuales-tecnicos/calibracion/AAN-803-05.pdf`](documentacion/manuales-tecnicos/calibracion/AAN-803-05.pdf) | Referencia oficial del fabricante para calibraciones electroquímicas. |
+| Brochure y ficha de operación en terreno | [`documentacion/manuales-tecnicos/operacion/brochure.pdf`](documentacion/manuales-tecnicos/operacion/brochure.pdf) · [`documentacion/manuales-tecnicos/operacion/Ficha Terreno AIRE.pdf`](documentacion/manuales-tecnicos/operacion/Ficha%20Terreno%20AIRE.pdf) | Ficha de despliegue en terreno y brochure visual del proyecto. |
+| Reporte laboratorio – voltaje circuito abierto ISB | [`documentacion/informes-pruebas/laboratorio/condiciones-controladas/Volt_Circuito_abierto_ISB_alphasense_est05/Voltage_circuito_abierto_alphasense_estacion_5.pdf`](documentacion/informes-pruebas/laboratorio/condiciones-controladas/Volt_Circuito_abierto_ISB_alphasense_est05/Voltage_circuito_abierto_alphasense_estacion_5.pdf) | Informe LaTeX con fotos e instrumental para medición de voltaje en placas ISB. Incluye fuentes `.tex` e imágenes en `img/`. |
+| Reporte campo – co-ubicación SINCA | [`documentacion/informes-pruebas/campo/co-ubicacion-sinca/calibracion-sinca-1.pdf`](documentacion/informes-pruebas/campo/co-ubicacion-sinca/calibracion-sinca-1.pdf) | Evidencia PDF de campaña de co-ubicación para calibraciones con red SINCA. |
+
+## Equipo de trabajo
+| Rol | Responsable | Función principal |
+| --- | --- | --- |
+| Dirección del proyecto | Zoe Fleming | Define lineamientos estratégicos, asegura recursos y relación con interesados de alto nivel. |
+| Coordinación general | Luis Gómez | Coordina disciplinas, consolida reportes de avance y comunica el estado del proyecto. |
+| Firmware y comunicaciones | Alejandro Rebolledo | Lidera programación de firmware, integración de sensores y enlaces GSM/4G/RS485. |
+| Operaciones en terreno | Pablo Ortiz | Gestiona despliegues de torres, logística de instalación y soporte en campo. |
+| Mediciones y administración de datos | Catalina Azola | Define rutinas de muestreo, resguarda datos de mediciones y entrega datasets a QA/QC. |
+| Documentación regulatoria, QA/QC y bases de datos | Christopher Silva | Mantiene cumplimiento normativo, verifica calidad de datos y gestiona respaldos/registros. |
+| Diseño de hardware y componentes | Rodrigo Ortega | Diseña la estructura física, integra panel solar + baterías y define componentes mecánicos. |
+| Diseño electrónico | Sebastián Adonay | Desarrolla la electrónica de adquisición y acondicionamiento para sensores electroquímicos, ópticos y meteorológicos. |
 
 
 ## Cómo colaborar (incluye uso con Codex)
