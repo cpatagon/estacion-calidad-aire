@@ -1,0 +1,86 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\geometry{margin=2.5cm}
+
+\title{Recomendaciones y Pruebas Eléctricas para Sensores Alphasense}
+\author{}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{1. Objetivo}
+Establecer una metodología de prueba para verificar condiciones eléctricas, consumo y niveles de ruido en sensores de gases electroquímicos Alphasense. Se busca identificar la calidad de alimentación y tierra, así como caracterizar el comportamiento eléctrico de cada sensor de forma individual y repetir pruebas para todos los sensores conectados en serie, revisar .
+
+\section*{2. Equipamiento Recomendado}
+\begin{itemize}[label=\textbullet]
+  \item Multímetro de precisión (resolución de al menos 1 mV / 1 µA)
+  \item Osciloscopio (≥20 MHz de ancho de banda, con opción AC/DC y modo diferencial)
+  \item Sonda de corriente (ej. tipo hall o shunt de bajo valor con amplificador)
+  \item Fuente regulada de laboratorio con bajo ruido(usar Nordic PPK para pruebas individuales)
+  \item Cables blindados y clips Kelvin (para medidas diferenciales)
+\end{itemize}
+
+\section*{3. Mediciones a Realizar}
+
+\subsection*{3.1. Medición de Voltaje de Alimentación (V\textsubscript{IN})}
+\begin{itemize}
+  \item Medir tensión DC entre pin VCC y GND del conector ISB.
+  \item Repetir la medición en la entrada y salida del regulador LDO.
+  \item Registrar valores típicos y desviaciones bajo carga.
+  \item Registrar valores de ruido de gnd pines de gnd.
+\end{itemize}
+
+\subsection*{3.2. Medición de Corriente de Consumo}
+\begin{itemize}
+  \item Usar Multimetro en serie.
+  \item Alternativamente, utilizar sonda de corriente si se desea no invadir la línea.
+\end{itemize}
+
+\subsection*{3.3. Medición de Ruido en la Alimentación}
+\begin{itemize}
+  \item Conectar el osciloscopio en modo AC entre VCC y GND del sensor.
+  \item Evaluar rizado de alta frecuencia (>10 kHz), spikes o modulación.
+  \item Repetir en la salida del LDO y entrada del sensor.
+\end{itemize}
+
+\subsection*{3.4. Medición de Ruido en la Línea de Tierra (GND)}
+\begin{itemize}
+  \item Configurar osciloscopio en modo diferencial(revisar manual del osiliscopio).
+  \item Medir entre GND del sensor y GND central del sistema (fuente o plano principal).
+  \item Identificar diferencias de potencial o corrientes parásitas.
+\end{itemize}
+
+\section*{4. Consideraciones}
+\begin{itemize}
+  \item Asegurar conexiones de baja impedancia y minimizar bucles de masa.
+  \item Utilizar cables cortos y bien acoplados.
+  \item Evitar puntos de masa flotantes entre sensor y regulador.
+  \item Repetir pruebas con carga activa (sensor funcionando) y en reposo.
+\end{itemize}
+
+\section*{5. Registro de Datos}
+Crear una tabla por sensor con los siguientes campos:
+\begin{itemize}
+  \item ID del sensor
+  \item Tensión entrada (antes del LDO)
+  \item Tensión salida (en el sensor)
+  \item Corriente media
+  \item Rizado pico a pico observado
+  \item Diferencia de potencial GND–GND (sensor–fuente)
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{image.png}
+    \caption{Revisar continuadad de GND y RUIDO en pin 2, 4 y 6}
+    \label{fig:placeholder}
+\end{figure}
+\end{itemize}
+
+\end{document}
