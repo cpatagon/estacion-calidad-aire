@@ -28,14 +28,20 @@ La estación integra sensores **electroquímicos**, **ópticos** y **meteorológ
 - Correlación con estaciones de referencia.
 - Evaluación de impactos urbanos o industriales.
 
+## Nuevos recursos clave
+- `04-diseño-detallado/diseño-firmware/PLACAMADRE_LINEA_BASE_V0_0_3/`: firmware completo para la "Placa Madre Rev. D" basado en ESP32. Incluye módulos `*.ino` para adquisición multicanal (ADS1115, PMS5003, MH-Z19, Modbus RS485), datalogging en microSD, envío HTTP vía SIM7600, manejo de cámara, watchdog y utilidades de depuración descritas en su `README.md`.
+- `07-verificacion/resultados-pruebas/pruebas-laboratorio/analisis_fuente/`: carpeta con CSV crudos (`DS0001–DS0004`), fotografías del montaje, gráficas FFT/tiempo y un informe LaTeX del ensayo del 17-nov-2025 que evalúa la calidad de la fuente que alimenta los sensores AlphaSense.
+- `documentacion/informes-pruebas/metodologias/protocolos-estandar/pruebas_sensores_alphasense.pdf` (y `.tex`): protocolo detallado para pruebas eléctricas de placas ISB/AFE, con listas de equipos, pasos de medición, advertencias sobre tierra/diferenciales y formatos de registro.
+- `04-diseño-detallado/diseño-hardware/mejoras/reguladores_adc_alphasense.pdf`: nota técnica que resume reguladores LDO de alto PSRR y ADC de alta resolución sugeridos para acondicionar las salidas de los sensores AlphaSense.
+
 ## Guía rápida del repositorio
 - `01-requisitos-interesados/`: necesidades y casos de uso basados en el brochure técnico.
 - `02-requisitos-sistema/`: requisitos funcionales/no funcionales y especificaciones (contaminantes, soporte meteo, emergentes).
 - `03-diseño-arquitectura/`: decisiones, vistas de arquitectura y espacio para diagramas.
-- `04-diseño-detallado/`: definición preliminar de hardware, firmware y gestión de datos.
+- `04-diseño-detallado/`: definición preliminar de hardware, firmware y gestión de datos; aquí viven el firmware operativo (`diseño-firmware/PLACAMADRE_LINEA_BASE_V0_0_3/`) y la nota de reguladores/ADC (`diseño-hardware/mejoras/reguladores_adc_alphasense.*`).
 - `05-implementacion/`: árbol para hardware (PCB, carcasas, componentes), firmware (PlatformIO) y software (backend/frontend/scripts).
-- `06-10/`: integración, verificación, validación, despliegue y operación/mantenimiento.
-- `documentacion/`, `datos/`, `herramientas/`, `configuracion/`: repositorios para datasheets, datasets EPA/WMO, utilidades y perfiles de configuración.
+- `06-10/`: integración, verificación, validación, despliegue y operación/mantenimiento; destaca `07-verificacion/resultados-pruebas/pruebas-laboratorio/analisis_fuente/` con los CSV, gráficas e informe del ensayo de fuente.
+- `documentacion/`, `datos/`, `herramientas/`, `configuracion/`: repositorios para datasheets, datasets EPA/WMO, utilidades y perfiles de configuración. En `documentacion/informes-pruebas/metodologias/protocolos-estandar/` está el protocolo LaTeX/PDF para pruebas eléctricas de sensores.
 - `gestion-proyecto/planificacion/roles-responsabilidades.md`: lista actualizada de cargos, incluyendo QA/QC y administración de datos.
 
 ## Índice de informes y manuales
@@ -47,6 +53,10 @@ La estación integra sensores **electroquímicos**, **ópticos** y **meteorológ
 | Brochure y ficha de operación en terreno | [`documentacion/manuales-tecnicos/operacion/brochure.pdf`](documentacion/manuales-tecnicos/operacion/brochure.pdf) · [`documentacion/manuales-tecnicos/operacion/Ficha Terreno AIRE.pdf`](documentacion/manuales-tecnicos/operacion/Ficha%20Terreno%20AIRE.pdf) | Ficha de despliegue en terreno y brochure visual del proyecto. |
 | Reporte laboratorio – voltaje circuito abierto ISB | [`documentacion/informes-pruebas/laboratorio/condiciones-controladas/Volt_Circuito_abierto_ISB_alphasense_est05/Voltage_circuito_abierto_alphasense_estacion_5.pdf`](documentacion/informes-pruebas/laboratorio/condiciones-controladas/Volt_Circuito_abierto_ISB_alphasense_est05/Voltage_circuito_abierto_alphasense_estacion_5.pdf) | Informe LaTeX con fotos e instrumental para medición de voltaje en placas ISB. Incluye fuentes `.tex` e imágenes en `img/`. |
 | Reporte campo – co-ubicación SINCA | [`documentacion/informes-pruebas/campo/co-ubicacion-sinca/calibracion-sinca-1.pdf`](documentacion/informes-pruebas/campo/co-ubicacion-sinca/calibracion-sinca-1.pdf) | Evidencia PDF de campaña de co-ubicación para calibraciones con red SINCA. |
+| Firmware base ESP32 (Placa Madre v0.0.3) | [`04-diseño-detallado/diseño-firmware/PLACAMADRE_LINEA_BASE_V0_0_3/`](04-diseño-detallado/diseño-firmware/PLACAMADRE_LINEA_BASE_V0_0_3/) | Código organizado en módulos `*.ino` para adquisición de sensores, SD, GSM/HTTP, control de cámara y WDT; incluye `README.md` con descripción operativa. |
+| Ensayo análisis de fuente – Estación 1 | [`07-verificacion/resultados-pruebas/pruebas-laboratorio/analisis_fuente/`](07-verificacion/resultados-pruebas/pruebas-laboratorio/analisis_fuente/) | CSV instrumentales, fotografías, gráficas y reporte LaTeX del ensayo del 17-nov-2025 sobre el rizado en las líneas de 3.3 V y 5 V. |
+| Protocolo pruebas eléctricas sensores Alphasense | [`documentacion/informes-pruebas/metodologias/protocolos-estandar/pruebas_sensores_alphasense.pdf`](documentacion/informes-pruebas/metodologias/protocolos-estandar/pruebas_sensores_alphasense.pdf) | Procedimiento estandarizado (PDF/`.tex`) con equipamiento recomendado, pasos de medición y formatos para caracterizar placas ISB/AFE. |
+| Nota sobre reguladores y ADC de alto PSRR | [`04-diseño-detallado/diseño-hardware/mejoras/reguladores_adc_alphasense.pdf`](04-diseño-detallado/diseño-hardware/mejoras/reguladores_adc_alphasense.pdf) | Comparativa de LDOs de bajo ruido y ADCs de ≥12 bits para mejorar alimentación y lectura de sensores electroquímicos. |
 
 ## Equipo de trabajo
 | Rol | Responsable | Función principal |
