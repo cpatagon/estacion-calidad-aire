@@ -1,0 +1,10 @@
+## Resumen de Mejoras Estaciones de aire V2
+- Incorporación de sensor de temperatura exterior para apoyar en las lecturas de sensores electroquímicos.
+- Incorporación de placa ADC y regulador de voltaje dedicado por sensor o pares de sensores para disminuir ruido electrónico.
+- Protocolos de instalación, consideraciones desde el laboratorio al terreno y montaje.
+- Desarrollo de “maleta/bloque” de sensores extendibles planteado de forma modular, equipado con su propio microcontrolador y comunicación con la placa madre mediante RS485.
+- Incorporación de succión de aire para las mediciones.
+
+Elementos por discutir:
+- Datalogger local, sujeto a confirmación de factibilidad técnica.
+- Incorporación de un microbanco interno de estabilización de corriente dentro de la “maleta/bloque”, destinado a mejorar la calidad de alimentación.
